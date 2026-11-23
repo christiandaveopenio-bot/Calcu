@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCK CAL | Block Blast Calculator</title>
+    <link rel="stylesheet" href="cula.css">
+</head>
+<body>
+
+<main class="calculator" id="calc">
+
+    <h1 class="title">BLOCK CAL</h1>
+    <p class="subtitle">PUZZLE YOUR NUMBERS</p>
+
+    <!-- MODE SWITCH -->
+    <div class="mode-switch">
+        <button type="button"
+            class="mode-btn active"
+            id="normalMode"
+            onclick="switchMode('normal')">
+            NORMAL
+        </button>
+
+        <button type="button"
+            class="mode-btn"
+            id="scientificMode"
+            onclick="switchMode('scientific')">
+            SCI CAL
+        </button>
+    </div>
+
+    <!-- DISPLAY -->
+    <form name="form1" onsubmit="return false">
+        <input
+            type="text"
+            name="textview"
+            placeholder="0"
+            readonly
+            aria-label="Calculator display"
+        >
+    </form>
+
+    <!-- SCIENTIFIC BUTTONS -->
+    <section class="sci-buttons" id="sciButtons">
+
+        <button type="button" class="block purple" onclick="insert('sin(')">sin</button>
+        <button type="button" class="block purple" onclick="insert('cos(')">cos</button>
+        <button type="button" class="block purple" onclick="insert('tan(')">tan</button>
+        <button type="button" class="block purple" onclick="insert('asin(')">sin⁻¹</button>
+
+        <button type="button" class="block purple" onclick="insert('acos(')">cos⁻¹</button>
+        <button type="button" class="block purple" onclick="insert('atan(')">tan⁻¹</button>
+        <button type="button" class="block yellow" onclick="toggleAngleMode()" id="angleMode">DEG</button>
+        <button type="button" class="block purple" onclick="insert('sqrt(')">√</button>
+
+        <button type="button" class="block cyan" onclick="insert('cbrt(')">∛</button>
+        <button type="button" class="block cyan" onclick="insert('^2')">x²</button>
+        <button type="button" class="block cyan" onclick="insert('^3')">x³</button>
+        <button type="button" class="block cyan" onclick="insert('^')">xʸ</button>
+
+        <button type="button" class="block purple" onclick="insert('log(')">log</button>
+        <button type="button" class="block purple" onclick="insert('ln(')">ln</button>
+        <button type="button" class="block purple" onclick="insert('10^(')">10ˣ</button>
+        <button type="button" class="block purple" onclick="insert('e^(')">eˣ</button>
+
+        <button type="button" class="block cyan" onclick="insert('!')">n!</button>
+        <button type="button" class="block cyan" onclick="insert('pi')">π</button>
+        <button type="button" class="block cyan" onclick="insert('e')">e</button>
+        <button type="button" class="block cyan" onclick="insert('abs(')">|x|</button>
+
+        <button type="button" class="block purple" onclick="insert('(')">(</button>
+        <button type="button" class="block purple" onclick="insert(')')">)</button>
+        <button type="button" class="block purple" onclick="insert('%')">%</button>
+        <button type="button" class="block purple" onclick="insert('/')">÷</button>
+
+    </section>
+
+    <!-- NORMAL CALCULATOR BUTTONS -->
+    <section class="buttons">
+
+        <button type="button" class="block red" onclick="clearScreen()">C</button>
+        <button type="button" class="block purple" onclick="backspace()">⌫</button>
+        <button type="button" class="block yellow" onclick="insert('/')">÷</button>
+        <button type="button" class="block yellow" onclick="insert('*')">×</button>
+
+        <button type="button" class="block blue" onclick="insert('7')">7</button>
+        <button type="button" class="block blue" onclick="insert('8')">8</button>
+        <button type="button" class="block blue" onclick="insert('9')">9</button>
+        <button type="button" class="block yellow" onclick="insert('-')">−</button>
+
+        <button type="button" class="block blue" onclick="insert('4')">4</button>
+        <button type="button" class="block blue" onclick="insert('5')">5</button>
+        <button type="button" class="block blue" onclick="insert('6')">6</button>
+        <button type="button" class="block yellow" onclick="insert('+')">+</button>
+
+        <button type="button" class="block blue" onclick="insert('1')">1</button>
+        <button type="button" class="block blue" onclick="insert('2')">2</button>
+        <button type="button" class="block blue" onclick="insert('3')">3</button>
+        <button type="button" class="block green tall" onclick="equal()">=</button>
+
+        <button type="button" class="block cyan wide" onclick="insert('0')">0</button>
+        <button type="button" class="block cyan" onclick="insert('.')">.</button>
+
+    </section>
+
+    <p class="footer">BLOCK BLAST EXPERIENCE</p>
+
+</main>
+
+<!-- NOTIFICATION -->
+<div class="popup" id="popup" aria-live="polite">
+    <div class="popup-content" id="popupContent">
+        <div class="popup-title" id="popupTitle">AMAZING!</div>
+        <div class="popup-sub" id="popupSub">NICE CALCULATION!</div>
+    </div>
+</div>
+
+<script src="tor.js"></script>
+
+</body>
+</html>
